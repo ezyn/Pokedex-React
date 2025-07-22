@@ -1,0 +1,29 @@
+:root {
+    --bg-color: #f4f4f4;
+    --text-color: #333;
+    --card-bg-color: #f9f9f9;
+    --card-border-color: #ccc;
+    --card-bg-color-rgb: 249, 249, 249;
+}
+
+.dark-theme {
+    --bg-color: #222;
+    --text-color: #fff;
+    --card-bg-color: #333;
+    --card-border-color: #041614;
+    --card-bg-color-rgb: 51, 51, 51;
+}
+
+.App {
+    font-family: sans-serif;
+    text-align: center;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100%;
+}
