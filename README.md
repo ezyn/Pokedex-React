@@ -41,7 +41,7 @@ Este projeto é uma aplicação web que funciona como uma Pokédex, permitindo a
 
 2.  **Clone o repositório:**
     ```bash
-    git clone <url_do_repositorio>
+    git clone https://github.com/ezyn/Pokedex-React
     cd quest-react-avancado-pokedex
     ```
 
