@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import { getPokemons } from '../services/pokemonService';
 import PokemonCard from '../components/PokemonCard';
@@ -83,12 +83,8 @@ const Home = () => {
         setLoading(true);
         try {
             const newPokemons = await getPokemons(10, offset);
-            setPokemons(prevPokemons => {
-                const existingPokemonNames = new Set(prevPokemons.map(pokemon => pokemon.name));
-                const filteredNewPokemons = newPokemons.filter(pokemon => !existingPokemonNames.has(pokemon.name));
-                return [...prevPokemons, ...filteredNewPokemons];
-            });
-            setOffset(prevOffset => prevOffset + 10);
+            setPokemons([...pokemons, ...newPokemons]);
+            setOffset(offset + 10);
         } catch (error) {
             console.error("Erro ao carregar mais Pokémons:", error);
         } finally {
@@ -99,7 +95,7 @@ const Home = () => {
     useEffect(() => {
         loadMore();
     }, []);
-
+console.log(pokemons);
     return (
         <HomeContainer className={`App ${theme === 'dark' ? 'dark-theme' : ''}`}>
             <Logo src={logoPokemon} alt="Logo Pokedex" />

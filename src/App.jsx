@@ -1,4 +1,3 @@
-import React from 'react';
 import { ThemeProvider } from './components/ThemeContext';
 import AppRoutes from './routes/routes';
 import './App.css';
